@@ -1,0 +1,285 @@
+<!-- Hero Section: Premium Optimized -->
+<section class="bg-secondary text-white pt-[4rem] pb-[2.5rem] relative overflow-hidden" role="banner">
+ <div class="container mx-auto px-4 relative z-10 text-center md:text-left">
+ <div class="max-w-4xl">
+ <h1 class="font-title text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] font-black mb-6 tracking-tight leading-[1.1] text-balance">
+ Me adota?
+ </h1>
+ 
+ <p class="text-[1.125rem] md:text-[1.25rem] lg:text-[1.375rem] font-medium leading-relaxed mb-6 text-balance text-white/90 max-w-2xl">
+ <span class="text-primary block mb-3 text-[1rem] lg:text-[1.125rem] font-black uppercase tracking-[0.2em]">Adoção Responsável</span>Descubra as vidas que aguardam por um lar cheio de responsabilidade e amor na Cidade Imperial
+ </p>
+
+ <div class="flex flex-wrap gap-4 justify-center md:justify-start"> <a href="#guia-adocao" class="inline-flex items-center gap-3 px-8 py-4 border-2 border-white/20 hover:border-primary hover:text-primary text-white rounded-2xl font-black uppercase text-[13px] tracking-widest transition-all focus-visible:ring-2 focus-visible:ring-primary outline-none group">
+ <i class="fa-solid fa-book-open opacity-40 group-hover:opacity-100 transition-opacity"></i>
+ <span>Ler Guia de Adoção Responsável</span>
+ </a></div>
+ </div>
+ </div>
+</section>
+
+<section class="pt-10 pb-20">
+ <div class="container mx-auto px-4">
+ <!-- Toolbar -->
+ <div class="flex flex-wrap items-center justify-between gap-8 mb-8">
+ <div class="flex bg-gray-50 p-1.5 rounded-2xl border border-gray-100" role="tablist">
+ <button class="adoption-filter px-8 py-3 rounded-xl font-black uppercase text-[0.6rem] tracking-[0.2em] transition-all data-[active=true]:bg-secondary data-[active=true]:text-white data-[active=false]:text-secondary data-[active=false]:hover:bg-gray-100" type="button" data-filter="all" data-active="true">Todos</button>
+ <button class="adoption-filter px-8 py-3 rounded-xl font-black uppercase text-[0.6rem] tracking-[0.2em] transition-all data-[active=true]:bg-secondary data-[active=true]:text-white data-[active=false]:text-secondary data-[active=false]:hover:bg-gray-100" type="button" data-filter="cao" data-active="false">Cães</button>
+ <button class="adoption-filter px-8 py-3 rounded-xl font-black uppercase text-[0.6rem] tracking-[0.2em] transition-all data-[active=true]:bg-secondary data-[active=true]:text-white data-[active=false]:text-secondary data-[active=false]:hover:bg-gray-100" type="button" data-filter="gato" data-active="false">Gatos</button>
+ </div>
+ <div class="bg-gray-50 px-8 py-4 rounded-3xl border border-gray-100 font-black text-secondary flex items-center justify-center text-sm tracking-wide">
+ <span id="adoptionCounter">0 vidas encontradas</span>
+ </div>
+ </div>
+
+ <!-- Grid -->
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10" id="adoption-pets-grid"></div>
+
+ <!-- Pagination -->
+ <div class="flex items-center justify-center gap-4 mt-20">
+            <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-xl text-secondary hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed group" type="button" id="adoptionPrevBtn" aria-label="Ver página anterior">
+                <i class="fa-solid fa-chevron-left group-hover:-translate-x-1 transition-transform text-xs"></i>
+            </button>
+            <div class="flex gap-2" id="adoptionPageNumbers" aria-label="Números das páginas"></div>
+            <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-xl text-secondary hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed group" type="button" id="adoptionNextBtn" aria-label="Ver próxima página">
+                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform text-xs"></i>
+            </button>
+        </div>
+ </div>
+ </div>
+</section>
+
+<!-- Accordion Guide Section: Flat Premium -->
+<section id="guia-adocao" class="py-24 bg-white border-t border-gray-100">
+ <div class="container mx-auto px-4">
+ <div class="max-w-3xl mx-auto">
+ <div class="text-center mb-16">
+ <h2 class="text-3xl font-black text-secondary mb-4 tracking-tighter leading-none">Guia de Adoção Responsável</h2>
+ <p class="text-[0.6rem] font-black text-gray-400 uppercase tracking-[0.3em] mb-4">Informação Técnica & Empática</p>
+ <div class="w-12 h-1 bg-primary rounded-full mx-auto"></div>
+ </div>
+
+ <div class="space-y-4">
+ <!-- Item 1 -->
+ <article class="adoption-accordion border-2 border-gray-100 rounded-[2rem] overflow-hidden transition-all duration-300">
+ <button class="w-full flex items-center justify-between p-8 text-left group">
+ <span class="text-lg font-black text-secondary tracking-tight">O que é Guarda Responsável?</span>
+ <i class="fa-solid fa-plus text-gray-300 group-hover:text-primary transition-transform"></i>
+ </button>
+ <div class="accordion-content px-8 pb-8 hidden">
+ <p class="text-brand-text-main leading-relaxed opacity-80 text-sm">
+ Guarda responsável é o compromisso de cuidar bem do animal, oferecendo alimentação adequada, abrigo, saúde, atenção e segurança durante toda a sua vida. Cada vida disponível para adoção merece um lar fundamentado no amor e na responsabilidade oficial da Cidade Imperial.
+ </p>
+ </div>
+ </article>
+
+ <!-- Item 2 -->
+ <article class="adoption-accordion border-2 border-gray-100 rounded-[2rem] overflow-hidden transition-all duration-300">
+ <button class="w-full flex items-center justify-between p-8 text-left group">
+ <span class="text-lg font-black text-secondary tracking-tight">A Decisão de Assumir uma Vida</span>
+ <i class="fa-solid fa-plus text-gray-300 group-hover:text-primary transition-transform"></i>
+ </button>
+ <div class="accordion-content px-8 pb-8 hidden">
+ <p class="text-brand-text-main leading-relaxed opacity-80 text-sm">
+ Adotar jamais deve ser uma escolha impulsiva. Antes de levar uma vida para casa, avalie os cuidados diários necessários, o tempo real de convivência disponível, o espaço físico e, principalmente, o compromisso inegociável de todos os membros da família.
+ </p>
+ </div>
+ </article>
+
+ <!-- Item 3 -->
+ <article class="adoption-accordion border-2 border-gray-100 rounded-[2rem] overflow-hidden transition-all duration-300">
+ <button class="w-full flex items-center justify-between p-8 text-left group">
+ <span class="text-lg font-black text-secondary tracking-tight">Checklist de Compatibilidade</span>
+ <i class="fa-solid fa-plus text-gray-300 group-hover:text-primary transition-transform"></i>
+ </button>
+ <div class="accordion-content px-8 pb-8 hidden space-y-4">
+ <div class="border-l-2 border-primary/20 pl-4 py-1">
+ <strong class="text-[0.6rem] font-black uppercase text-gray-400 tracking-widest block mb-1">Espécie</strong>
+ <p class="text-[0.8rem] text-secondary font-medium">Cães e gatos possuem necessidades biológicas e comportamentais distintas.</p>
+ </div>
+ <div class="border-l-2 border-primary/20 pl-4 py-1">
+ <strong class="text-[0.6rem] font-black uppercase text-gray-400 tracking-widest block mb-1">Rotina e Perfil</strong>
+ <p class="text-[0.8rem] text-secondary font-medium">O porte, a energia e o comportamento do animal devem harmonizar com seu estilo de vida atual.</p>
+ </div>
+ <div class="border-l-2 border-primary/20 pl-4 py-1">
+ <strong class="text-[0.6rem] font-black uppercase text-gray-400 tracking-widest block mb-1">Espaço Geográfico</strong>
+ <p class="text-[0.8rem] text-secondary font-medium">O animal necessita de uma área segura, protegida e com espaço adequado ao seu porte físico.</p>
+ </div>
+ </div>
+ </article>
+
+ <!-- Item 4 -->
+ <article class="adoption-accordion border-2 border-gray-100 rounded-[2rem] overflow-hidden transition-all duration-300">
+ <button class="w-full flex items-center justify-between p-8 text-left group">
+ <span class="text-lg font-black text-secondary tracking-tight">Pilares do Cuidado Básico</span>
+ <i class="fa-solid fa-plus text-gray-300 group-hover:text-primary transition-transform"></i>
+ </button>
+ <div class="accordion-content px-8 pb-8 hidden">
+ <ul class="space-y-4">
+ <li class="flex items-start gap-4">
+ <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+ <span class="text-[0.65rem] font-black text-gray-500 uppercase tracking-tight">Alimentação técnica e hidratação constante.</span>
+ </li>
+ <li class="flex items-start gap-4">
+ <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+ <span class="text-[0.65rem] font-black text-gray-500 uppercase tracking-tight">Protocolos de saúde: Vacinas e Esterilização oficial.</span>
+ </li>
+ <li class="flex items-start gap-4">
+ <span class="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0"></span>
+ <span class="text-[0.65rem] font-black text-gray-500 uppercase tracking-tight">Ambiente higienizado e protegido contra exposição climática.</span>
+ </li>
+ <li class="flex items-start gap-4 p-4 bg-red-50 rounded-xl">
+ <span class="w-1.5 h-1.5 rounded-full bg-red-600 mt-2 flex-shrink-0"></span>
+ <span class="text-[0.65rem] font-black text-red-600 uppercase tracking-tight ">É CRIME manter animais presos em correntes ou em condições insalubres.</span>
+ </li>
+ </ul>
+ </div>
+ </article>
+
+ <!-- Item 5 -->
+ <article class="adoption-accordion border-2 border-gray-100 rounded-[2rem] overflow-hidden transition-all duration-300">
+ <button class="w-full flex items-center justify-between p-8 text-left group">
+ <span class="text-lg font-black text-secondary tracking-tight">Vidas não são Propriedades</span>
+ <i class="fa-solid fa-plus text-gray-300 group-hover:text-primary transition-transform"></i>
+ </button>
+ <div class="accordion-content px-8 pb-8 hidden">
+ <p class="text-brand-text-main leading-relaxed opacity-80 text-sm">
+ Ao assumir a guarda de um pet, você assume a responsabilidade pela sua jornada completa. Mudanças de rotina ou domicílio não justificam o abandono, que é configurado como crime. O compromisso oficial da COBEA é garantir que cada vida seja tratada com a dignidade e o respeito que merece.
+ </p>
+ </div>
+ </article>
+ </div>
+ 
+ <!-- Final Callout -->
+ <article class="mt-16 bg-secondary text-white p-12 rounded-[3.5rem] border-2 border-white/5 relative overflow-hidden text-center md:text-left shadow-none">
+ <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-10">
+ <div>
+ <h3 class="text-2xl font-black mb-4 text-primary leading-none tracking-tighter">Compromisso Cidade Imperial</h3>
+ <p class="text-lg opacity-80 leading-relaxed max-w-xl font-medium">
+ Nossa missão é transformar adoções em encontros definitivos. Faça parte dessa rede de proteção oficial.
+ </p>
+ </div>
+ <div class="w-20 h-20 bg-white/5 flex items-center justify-center rounded-full shrink-0 border border-white/10">
+ <i class="fa-solid fa-heart text-3xl text-primary animate-pulse"></i>
+ </div>
+ </div>
+ </article>
+ </div>
+ </div>
+</section>
+
+<script>
+(function () {
+ let allPets = [], activePage = 1, activeFilter = 'all';
+ const pageSize = 6;
+ const grid = document.getElementById('adoption-pets-grid');
+ const filterBtns = Array.from(document.querySelectorAll('.adoption-filter'));
+ const counter = document.getElementById('adoptionCounter');
+ const pageNumbers = document.getElementById('adoptionPageNumbers');
+ const prevBtn = document.getElementById('adoptionPrevBtn');
+ const nextBtn = document.getElementById('adoptionNextBtn');
+
+ const buildLocalPageNums = (wrap, active, total, onChange) => {
+        wrap.innerHTML = '';
+        for (let p = 1; p <= total; p++) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = `w-10 h-10 flex items-center justify-center rounded-xl font-black text-xs transition-all ${p === active ? 'bg-primary text-white' : 'bg-white text-secondary border border-gray-100 hover:border-primary hover:text-primary'}`;
+            btn.textContent = p;
+            btn.addEventListener('click', () => onChange(p));
+            wrap.appendChild(btn);
+        }
+    };
+
+ fetch('data/me-adota.json')
+ .then(r => r.json())
+ .then(data => { allPets = data; init(); })
+ .catch(e => console.error('Erro ao carregar me-adota.json:', e));
+
+ function init() {
+ filterBtns.forEach(btn => btn.addEventListener('click', () => {
+ activeFilter = btn.dataset.filter;
+ activePage = 1;
+ filterBtns.forEach(b => b.setAttribute('data-active', b === btn));
+ render();
+ }));
+ prevBtn.addEventListener('click', () => { if (activePage > 1) { activePage--; render(); } });
+ nextBtn.addEventListener('click', () => { if (activePage < getTotal()) { activePage++; render(); } });
+ render();
+ }
+
+ function filtered() {
+ return activeFilter === 'all' ? allPets.slice() : allPets.filter(p => p.categoria === activeFilter);
+ }
+
+ function getTotal() { return Math.max(1, Math.ceil(filtered().length / pageSize)); }
+ function trunc(t, n = 100) { return t.length > n ? t.slice(0, n) + '…' : t; }
+
+ function render() {
+ const list = filtered();
+ const total = getTotal();
+ activePage = Math.min(activePage, total);
+ grid.innerHTML = '';
+ list.slice((activePage - 1) * pageSize, activePage * pageSize).forEach(pet => {
+ const a = document.createElement('article');
+ a.className = 'group bg-white rounded-[2.5rem] border-2 border-gray-100 overflow-hidden flex flex-col h-full transition-all duration-500 hover:border-primary/20 hover:-translate-y-2';
+ a.innerHTML = `
+ <div class="h-72 overflow-hidden relative">
+ <img src="${pet.imagem}" alt="${pet.nome}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+ <div class="absolute top-0 right-0 bg-emerald-500 text-white text-[0.6rem] font-black px-6 py-2 rounded-bl-[1.5rem] tracking-widest uppercase">Me adota</div>
+ </div>
+                <div class="p-8 flex flex-col flex-1">
+                    <h3 class="text-3xl font-black text-secondary mb-5 font-title leading-none tracking-tighter" style="text-wrap: balance;">${pet.nome}</h3>
+                    <div class="space-y-4 mb-8 uppercase">
+                        <div class="flex flex-col border-l-2 border-primary/30 pl-4 py-1">
+                            <span class="font-title font-bold text-gray-400 tracking-widest text-[0.55rem]">Sexo</span>
+                            <span class="text-secondary font-title font-black text-sm uppercase">${pet.sexo}</span>
+                        </div>
+                        <div class="flex flex-col border-l-2 border-primary/30 pl-4 py-1">
+                            <span class="font-title font-bold text-gray-400 tracking-widest text-[0.55rem]">Idade</span>
+                            <span class="text-secondary font-title font-black text-sm uppercase">${pet.idadeAproximada}</span>
+                        </div>
+                        <div class="flex flex-col border-l-2 border-primary/30 pl-4 py-1">
+                            <span class="font-title font-bold text-gray-400 tracking-widest text-[0.55rem]">Castrado</span>
+                            <span class="text-secondary font-title font-black text-sm uppercase">${pet.castrado}</span>
+                        </div>
+                        <p class="leading-relaxed text-xs text-gray-500 border-t border-gray-100 pt-6 font-medium">${trunc(pet.caracteristicas, 90)}</p>
+                    </div>
+                    <a class="mt-auto btn-secondary w-full" href="#quero-adotar">Quero adotar!</a>
+                </div>`;
+ grid.appendChild(a);
+ });
+ const n = list.length;
+ counter.innerHTML = `<span class="font-black ">${n}</span> ${n === 1 ? 'vida' : 'vidas'}`;
+ buildLocalPageNums(pageNumbers, activePage, total, p => { activePage = p; render(); });
+ prevBtn.disabled = activePage <= 1;
+ nextBtn.disabled = activePage >= total;
+ }
+
+ // Implementation of Accordion logic
+ const accordions = document.querySelectorAll('.adoption-accordion');
+ accordions.forEach(acc => {
+ const btn = acc.querySelector('button');
+ const content = acc.querySelector('.accordion-content');
+ const icon = acc.querySelector('i');
+
+ btn.addEventListener('click', () => {
+ const isOpen = !content.classList.contains('hidden');
+  
+ // Close all
+ accordions.forEach(other => {
+ other.querySelector('.accordion-content').classList.add('hidden');
+ other.querySelector('i').classList.remove('rotate-45');
+ other.classList.remove('bg-gray-50', 'border-primary/20');
+ });
+
+ // Open target
+ if (!isOpen) {
+ content.classList.remove('hidden');
+ icon.classList.add('rotate-45');
+ acc.classList.add('bg-gray-50', 'border-primary/20');
+ }
+ });
+ });
+})();
+</script>

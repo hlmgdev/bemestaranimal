@@ -1,0 +1,182 @@
+<!-- Hero Section: Premium Optimized -->
+<section class="bg-secondary text-white pt-[4rem] pb-[2.5rem] relative overflow-hidden" role="banner">
+ <div class="container mx-auto px-4 relative z-10 text-center md:text-left">
+ <div class="max-w-4xl">
+ <h1 class="font-title text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] font-black mb-6 tracking-tight leading-[1.1] text-balance">
+ Fale com a COBEA
+ </h1>
+ 
+ <p class="text-[1.125rem] md:text-[1.25rem] lg:text-[1.375rem] font-medium leading-relaxed mb-6 text-balance text-white/90 max-w-2xl">
+ Tire dúvidas, solicite informações ou sinalize uma situação. Nossa equipe está pronta para atender
+ </p>
+
+ 
+ </div>
+ </div>
+</section>
+
+<!-- Contato -->
+<section class="py-14 bg-gray-50">
+ <div class="container mx-auto px-4">
+ <div class="max-w-3xl mx-auto space-y-8">
+
+ <!-- Cards de contato rápido -->
+ <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+ <!-- Telefone -->
+ <a href="tel:552422911505" class="group bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-secondary hover:shadow-md transition-all">
+ <div class="w-12 h-12 bg-secondary/10 text-secondary flex items-center justify-center rounded-xl text-xl group-hover:bg-secondary group-hover:text-white transition-all">
+ <i class="fa-solid fa-phone"></i>
+ </div>
+ <div>
+ <span class="block font-black text-secondary text-xs uppercase tracking-widest mb-1">Telefone</span>
+ <span class="block text-sm font-bold text-brand-text-main">(24) 2291-1505</span>
+ <span class="block text-[0.65rem] text-brand-text-main opacity-60 mt-0.5">Atendimento presencial</span>
+ </div>
+ </a>
+
+ <!-- E-mail -->
+ <a href="mailto:cobea@petropolis.rj.gov.br" class="group bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-secondary hover:shadow-md transition-all">
+ <div class="w-12 h-12 bg-secondary/10 text-secondary flex items-center justify-center rounded-xl text-xl group-hover:bg-secondary group-hover:text-white transition-all">
+ <i class="fa-solid fa-envelope"></i>
+ </div>
+ <div>
+ <span class="block font-black text-secondary text-xs uppercase tracking-widest mb-1">E-mail</span>
+ <span class="block text-sm font-bold text-brand-text-main">cobea@petropolis.rj.gov.br</span>
+ <span class="block text-[0.65rem] text-brand-text-main opacity-60 mt-0.5">Resposta em até 48h úteis</span>
+ </div>
+ </a>
+
+ <!-- Endereço -->
+ <a href="https://maps.google.com/?q=Petropolis+RJ+Prefeitura" target="_blank" rel="noopener" class="group bg-white border border-gray-200 rounded-2xl p-6 flex flex-col items-center text-center gap-3 hover:border-secondary hover:shadow-md transition-all">
+ <div class="w-12 h-12 bg-secondary/10 text-secondary flex items-center justify-center rounded-xl text-xl group-hover:bg-secondary group-hover:text-white transition-all">
+ <i class="fa-solid fa-location-dot"></i>
+ </div>
+ <div>
+ <span class="block font-black text-secondary text-xs uppercase tracking-widest mb-1">Localização</span>
+ <span class="block text-sm font-bold text-brand-text-main">Petrópolis, RJ</span>
+ <span class="block text-[0.65rem] text-brand-text-main opacity-60 mt-0.5">Ver no mapa</span>
+ </div>
+ </a>
+ </div>
+
+ <!-- Formulário de contato -->
+ <article class="bg-white rounded-2xl border border-gray-200 overflow-hidden">
+ <div class="px-8 py-6 border-b border-gray-100">
+ <h2 class="text-xl font-black text-secondary mb-1">Envie uma mensagem</h2>
+ <p class="text-sm text-brand-text-main opacity-60">Para denúncias, utilize o canal específico em <a href="#denuncias" class="text-primary font-bold underline underline-offset-2">Denúncias</a>.</p>
+ </div>
+
+ <form class="p-8 space-y-5" id="contato-form" action="#" method="post">
+
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="contatoNome">Nome completo</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="text" id="contatoNome" name="nome" placeholder="Seu nome" required>
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="contatoTelefone">Telefone</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="tel" id="contatoTelefone" name="telefone" placeholder="(00) 00000-0000">
+ </div>
+ <div class="md:col-span-2">
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="contatoEmail">E-mail</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="email" id="contatoEmail" name="email" placeholder="seu@email.com" required>
+ </div>
+ </div>
+
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="contatoAssunto">Assunto</label>
+ <select class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all appearance-none" id="contatoAssunto" name="assunto" required>
+ <option value="" disabled selected>Selecione um assunto</option>
+ <option value="adocao">Adoção de animais</option>
+ <option value="rede">Cadastro na rede de proteção</option>
+ <option value="campanhas">Campanhas e eventos</option>
+ <option value="informacao">Solicitação de informação</option>
+ <option value="parceria">Parceria institucional</option>
+ <option value="outro">Outro</option>
+ </select>
+ </div>
+
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="contatoMensagem">Mensagem</label>
+ <textarea class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all resize-none" id="contatoMensagem" name="mensagem" rows="5" placeholder="Descreva sua solicitação..." required></textarea>
+ </div>
+
+ <!-- Disclaimer -->
+ <p class="text-[0.65rem] text-brand-text-main opacity-60 leading-relaxed">
+ Para <strong>denúncias de maus-tratos</strong>, utilize o canal dedicado em <a href="#denuncias" class="text-primary font-bold">Denúncias</a> — disponível 24h com garantia de sigilo. Mensagens enviadas por este formulário têm prazo de resposta de até <strong>48 horas úteis</strong>.
+ </p>
+
+ <div class="flex justify-end pt-2">
+ <button type="submit" class="px-10 py-3.5 bg-secondary hover:bg-secondary/90 text-white rounded-xl font-black uppercase text-sm tracking-widest transition-all transform active:scale-95">
+ Enviar mensagem
+ </button>
+ </div>
+
+ </form>
+ </article>
+
+ <!-- Info adicional -->
+ <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+ <!-- Horário -->
+ <div class="bg-white border border-gray-200 rounded-2xl p-6">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center rounded-xl shrink-0">
+ <i class="fa-solid fa-clock"></i>
+ </div>
+ <span class="font-black text-secondary text-sm ">Horário de atendimento</span>
+ </div>
+ <ul class="space-y-1.5 text-xs text-brand-text-main opacity-80 leading-relaxed">
+ <li class="flex justify-between">
+ <span class="font-bold">Segunda a Sexta</span>
+ <span>08h – 17h</span>
+ </li>
+ <li class="flex justify-between">
+ <span class="font-bold">Sábado</span>
+ <span>08h – 12h</span>
+ </li>
+ <li class="flex justify-between text-brand-text-main opacity-50">
+ <span class="font-bold">Domingo e Feriados</span>
+ <span>Fechado</span>
+ </li>
+ </ul>
+ <p class="text-[0.65rem] text-primary font-bold mt-3 pt-3 border-t border-gray-100">
+ <i class="fa-solid fa-triangle-exclamation mr-1"></i> Denúncias: disponíveis 24h pelo formulário online.
+ </p>
+ </div>
+
+ <!-- Canais rápidos de ação -->
+ <div class="bg-white border border-gray-200 rounded-2xl p-6">
+ <div class="flex items-center gap-3 mb-4">
+ <div class="w-10 h-10 bg-secondary/10 text-secondary flex items-center justify-center rounded-xl shrink-0">
+ <i class="fa-solid fa-bolt"></i>
+ </div>
+ <span class="font-black text-secondary text-sm ">Acesso rápido</span>
+ </div>
+ <div class="space-y-2">
+ <a href="#denuncias" class="flex items-center gap-3 text-xs font-bold text-brand-text-main hover:text-secondary transition-colors group">
+ <i class="fa-solid fa-triangle-exclamation text-danger w-4 text-center"></i>
+ Fazer uma denúncia
+ <i class="fa-solid fa-arrow-right text-[0.5rem] opacity-0 group-hover:opacity-100 transition-opacity ml-auto"></i>
+ </a>
+ <a href="#quero-adotar" class="flex items-center gap-3 text-xs font-bold text-brand-text-main hover:text-secondary transition-colors group">
+ <i class="fa-solid fa-paw text-secondary w-4 text-center"></i>
+ Adotar um animal
+ <i class="fa-solid fa-arrow-right text-[0.5rem] opacity-0 group-hover:opacity-100 transition-opacity ml-auto"></i>
+ </a>
+ <a href="#cadastro-protetores" class="flex items-center gap-3 text-xs font-bold text-brand-text-main hover:text-secondary transition-colors group">
+ <i class="fa-solid fa-hand-holding-heart text-secondary w-4 text-center"></i>
+ Cadastrar na rede
+ <i class="fa-solid fa-arrow-right text-[0.5rem] opacity-0 group-hover:opacity-100 transition-opacity ml-auto"></i>
+ </a>
+ <a href="#faq" class="flex items-center gap-3 text-xs font-bold text-brand-text-main hover:text-secondary transition-colors group">
+ <i class="fa-solid fa-circle-question text-secondary w-4 text-center"></i>
+ Perguntas frequentes
+ <i class="fa-solid fa-arrow-right text-[0.5rem] opacity-0 group-hover:opacity-100 transition-opacity ml-auto"></i>
+ </a>
+ </div>
+ </div>
+ </div>
+
+ </div>
+ </div>
+</section>

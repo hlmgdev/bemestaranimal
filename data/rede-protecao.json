@@ -1,0 +1,98 @@
+[
+  {
+    "nome": "Helena Azevedo",
+    "bairro": "Centro",
+    "telefone": "(24) 9 9771-1001",
+    "email": "helena.az@exemplo.org"
+  },
+  {
+    "nome": "Rafael Monteiro",
+    "bairro": "Quitandinha",
+    "telefone": "(24) 9 9888-1001",
+    "email": "rafael.m@exemplo.org"
+  },
+  {
+    "nome": "Marina Couto",
+    "bairro": "Cascatinha",
+    "telefone": "(24) 9 9770-2102",
+    "email": "marina.c@exemplo.org"
+  },
+  {
+    "nome": "Diego Fonseca",
+    "bairro": "Itaipava",
+    "telefone": "(24) 9 9776-2002",
+    "email": "diego.f@exemplo.org"
+  },
+  {
+    "nome": "Paula Ribeiro",
+    "bairro": "Alto da Serra",
+    "telefone": null,
+    "email": "paula.r@exemplo.org"
+  },
+  {
+    "nome": "Lucas Moreira",
+    "bairro": "Corrêas",
+    "telefone": "(24) 9 9665-3003",
+    "email": null
+  },
+  {
+    "nome": "Instituto Patinhas da Serra",
+    "bairro": "Centro",
+    "telefone": "(24) 9 9880-1203",
+    "email": "contato@patinhasdaserra.org"
+  },
+  {
+    "nome": "Amigos de Quatro Patas",
+    "bairro": "Quitandinha",
+    "telefone": "(24) 9 9770-4004",
+    "email": "contato@4patas.org"
+  },
+  {
+    "nome": "Lar da Esperança Petropolitano",
+    "bairro": "Mosela",
+    "telefone": null,
+    "email": "contato@lardesperanca.org"
+  },
+  {
+    "nome": "Proteção Animal da Posse",
+    "bairro": "Posse",
+    "telefone": "(24) 9 9660-5005",
+    "email": null
+  },
+  {
+    "nome": "Casa do Amparo Animal",
+    "bairro": "Araras",
+    "telefone": null,
+    "email": "amparo@casadoamparo.org"
+  },
+  {
+    "nome": "Bianca Salles",
+    "bairro": "Bingen",
+    "telefone": "(24) 9 9881-4006",
+    "email": null
+  },
+  {
+    "nome": "Thiago Ferraz",
+    "bairro": "Valparaíso",
+    "telefone": null,
+    "email": "thiago.ferraz@exemplo.org"
+  },
+  {
+    "nome": "Camila Braga",
+    "bairro": "Mosela",
+    "telefone": "(24) 9 9774-5007",
+    "email": null
+  },
+  {
+    "nome": "André Lisboa",
+    "bairro": "Posse",
+    "telefone": null,
+    "email": "andre.lisboa@exemplo.org"
+  },
+  {
+    "nome": "Fernanda Tavares",
+    "bairro": "Araras",
+    "telefone": "(24) 9 9660-7008",
+    "email": null
+  }
+]

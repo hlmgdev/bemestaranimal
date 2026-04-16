@@ -1,0 +1,218 @@
+<!-- Hero Section: Premium Optimized -->
+<section class="bg-secondary text-white pt-[4rem] pb-[2.5rem] relative overflow-hidden" role="banner">
+ <div class="container mx-auto px-4 relative z-10 text-center md:text-left">
+ <div class="max-w-4xl">
+ <h1 class="font-title text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] font-black mb-6 tracking-tight leading-[1.1] text-balance">
+ Rede de Proteção Animal
+ </h1>
+ 
+ <p class="text-[1.125rem] md:text-[1.25rem] lg:text-[1.375rem] font-medium leading-relaxed mb-6 text-balance text-white/90 max-w-2xl">
+ Consulte protetores individuais e ONGs cadastrados e validados pela COBEA em Petrópolis
+ </p>
+
+ 
+ </div>
+ </div>
+</section>
+
+
+<!-- Data Section -->
+<section class="pt-10 pb-12 bg-surface flex-1">
+ <div class="container mx-auto px-4 max-w-6xl">
+ 
+  <!-- Controls: Enhanced Intelligent Filtering -->
+  <div class="flex flex-wrap items-center justify-between gap-6 mb-12">
+    <div class="flex flex-wrap items-center gap-4">
+      <!-- Bairro Filter Component: Glass Design -->
+      <div class="flex items-center bg-white/80 backdrop-blur-md p-1.5 pl-6 pr-3 rounded-full border border-gray-100 transition-all group focus-within:ring-4 focus-within:ring-primary/15 focus-within:border-primary/30">
+        <div class="flex items-center gap-3 pr-4 border-r border-gray-200">
+          <i class="fa-solid fa-location-dot text-primary text-[10px] animate-bounce-slow"></i>
+          <label class="sr-only" for="bairro-filter">Filtrar por Bairro</label>
+        </div>
+        <div class="relative">
+          <select id="bairro-filter" name="bairro" class="font-title bg-transparent border-0 outline-none focus:ring-0 text-secondary text-[0.7rem] font-black tracking-[0.1em] uppercase cursor-pointer pl-4 pr-10 appearance-none min-w-[160px] block">
+            <option value="todos">Todos os bairros</option>
+            <!-- Dynamic options injected here -->
+          </select>
+          <div class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-primary transition-transform group-hover:scale-110">
+            <i class="fa-solid fa-chevron-down text-[9px]"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Results Count: Pill Design -->
+    <div class="flex items-center gap-3 bg-secondary/5 px-6 py-2.5 rounded-full border border-secondary/5">
+      <div class="w-1.5 h-1.5 bg-primary rounded-full"></div>
+      <div class="font-title text-[0.6rem] font-black text-secondary/60 uppercase tracking-[0.2em]">
+        <span id="rede-protecao-results-count">0 resultados</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table Container -->
+  <div class="bg-white rounded-[3rem] border border-gray-100 overflow-hidden outline-none" id="rede-protecao-table-container" tabindex="0" aria-label="Tabela de protetores e instituições">
+  <div class="overflow-x-auto">
+  <table id="rede-protecao-list">
+  <thead>
+  <tr>
+  <th data-sort="nome" class="sortable">Nome / Categoria <i class="fa-solid fa-sort ml-2 text-[10px] opacity-20"></i></th>
+  <th data-sort="bairro" class="sortable">Bairro <i class="fa-solid fa-sort ml-2 text-[10px] opacity-20"></i></th>
+  <th>Telefone</th>
+  <th>E-mail</th>
+  </tr>
+  </thead>
+  <tbody></tbody>
+  </table>
+  </div>
+  </div>
+
+  <!-- Empty State -->
+  <div id="rede-protecao-empty" class="hidden bg-white p-24 rounded-[3rem] border-2 border-dashed border-gray-100 text-center">
+    <div class="w-20 h-20 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-6">
+      <i class="fa-solid fa-magnifying-glass text-gray-200 text-2xl"></i>
+    </div>
+    <p class="font-title text-[0.75rem] font-black text-secondary/40 uppercase tracking-widest">Nenhum registro encontrado para esta seleção.</p>
+  </div>
+
+  <!-- Pagination -->
+  <div class="flex items-center justify-center gap-3 mt-20">
+            <button class="w-12 h-12 flex items-center justify-center bg-white border border-gray-100 rounded-2xl text-secondary hover:border-primary hover:text-primary transition-all disabled:opacity-20 disabled:cursor-not-allowed group active:scale-95" type="button" id="rede-protecao-prev" aria-label="Ver página anterior">
+                <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform text-xs"></i>
+            </button>
+            <div class="flex gap-2" id="rede-protecao-page-numbers" aria-label="Números das páginas"></div>
+            <button class="w-12 h-12 flex items-center justify-center bg-white border border-gray-100 rounded-2xl text-secondary hover:border-primary hover:text-primary transition-all disabled:opacity-20 disabled:cursor-not-allowed group active:scale-95" type="button" id="rede-protecao-next" aria-label="Ver próxima página">
+                <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform text-xs"></i>
+            </button>
+        </div>
+ </div>
+</section>
+
+<style>
+  .sortable { cursor: pointer; }
+  .sortable:hover { background-color: #fcfdfe !important; }
+  .sortable i { transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+  .sortable.active { color: var(--color-primary) !important; }
+  .sortable.active i { opacity: 1 !important; color: var(--color-primary); }
+  
+  @keyframes bounce-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+  .animate-bounce-slow { animation: bounce-slow 2s infinite ease-in-out; }
+</style>
+
+<script>
+(function () {
+ let allData = [];
+ const filter = document.getElementById('bairro-filter');
+ const count = document.getElementById('rede-protecao-results-count');
+ const empty = document.getElementById('rede-protecao-empty');
+ const tableBody = document.querySelector('#rede-protecao-list tbody');
+ const wrap = document.getElementById('rede-protecao-table-container');
+ const pageNums = document.getElementById('rede-protecao-page-numbers');
+ const prev = document.getElementById('rede-protecao-prev');
+ const next = document.getElementById('rede-protecao-next');
+ 
+ const pageSize = 12;
+ let activePage = 1;
+ let sortConfig = { key: 'nome', direction: 'asc' };
+
+ const isONG = n => ['Instituto', 'Amigos', 'Lar', 'Proteção', 'Casa', 'ONG', 'Associação'].some(k => n.includes(k));
+
+ fetch('data/rede-protecao.json')
+ .then(r => r.json())
+ .then(data => { allData = data; populateFilter(); init(); })
+ .catch(err => console.error('Error loading protection network data:', err));
+
+ function populateFilter() {
+   const bairros = [...new Set(allData.map(i => i.bairro).filter(Boolean))].sort((a,b) => a.localeCompare(b, 'pt-BR'));
+   bairros.forEach(b => {
+     const opt = document.createElement('option');
+     opt.value = b;
+     opt.textContent = b;
+     filter.appendChild(opt);
+   });
+ }
+
+ function init() {
+ filter.addEventListener('change', () => { activePage = 1; render(); });
+ prev.addEventListener('click', () => { if (activePage > 1) { activePage--; render(); } });
+ next.addEventListener('click', () => { if (activePage < Math.ceil(getFiltered().length / pageSize)) { activePage++; render(); } });
+ 
+ document.querySelectorAll('#rede-protecao-list th.sortable').forEach(th => {
+   th.addEventListener('click', () => {
+     const key = th.getAttribute('data-sort');
+     if (sortConfig.key === key) {
+       sortConfig.direction = sortConfig.direction === 'asc' ? 'desc' : 'asc';
+     } else {
+       sortConfig.key = key;
+       sortConfig.direction = 'asc';
+     }
+     render();
+   });
+ });
+ render();
+ }
+
+ function getFiltered() {
+ const val = filter.value;
+ let res = val === 'todos' ? [...allData] : allData.filter(i => i.bairro === val);
+ res.sort((a, b) => {
+   const valA = (a[sortConfig.key] || '').toLowerCase();
+   const valB = (b[sortConfig.key] || '').toLowerCase();
+   return sortConfig.direction === 'asc' ? valA.localeCompare(valB, 'pt-BR') : valB.localeCompare(valA, 'pt-BR');
+ });
+ return res;
+ }
+
+ function render() {
+ const list = getFiltered();
+ const total = Math.ceil(list.length / pageSize) || 1;
+ wrap.classList.toggle('hidden', !list.length);
+ empty.classList.toggle('hidden', !!list.length);
+  
+ document.querySelectorAll('#rede-protecao-list th.sortable').forEach(th => {
+   const key = th.getAttribute('data-sort');
+   const icon = th.querySelector('i');
+   th.classList.toggle('active', key === sortConfig.key);
+   if (key === sortConfig.key) {
+     icon.className = `fa-solid fa-sort-${sortConfig.direction === 'asc' ? 'up' : 'down'} ml-2`;
+   } else {
+     icon.className = 'fa-solid fa-sort ml-2 opacity-20';
+   }
+ });
+
+ tableBody.innerHTML = '';
+ list.slice((activePage-1)*pageSize, activePage*pageSize).forEach(item => {
+ const tr = document.createElement('tr');
+ const ong = isONG(item.nome);
+ const icon = ong ? 'fa-building' : 'fa-user-check';
+ tr.innerHTML = `
+ <td>
+ <div class="flex items-center gap-4">
+ <i class="fa-solid ${icon} text-[11px] text-gray-200"></i>
+ <span class="table-data-text">${item.nome}</span>
+ </div>
+ </td>
+ <td><span class="table-data-text">${item.bairro || '—'}</span></td>
+ <td><span class="table-data-text">${item.telefone || '—'}</span></td>
+ <td><span class="table-data-text font-medium opacity-60 text-[0.75rem]">${item.email || '—'}</span></td>
+ `;
+ tableBody.appendChild(tr);
+ });
+
+ count.textContent = `${list.length} resultados`;
+ pageNums.innerHTML = '';
+ for (let p = 1; p <= total; p++) {
+     const btn = document.createElement('button');
+     btn.className = `w-12 h-12 flex items-center justify-center rounded-2xl font-black text-xs transition-all ${p === activePage ? 'bg-primary text-white' : 'bg-white text-secondary border border-gray-100 hover:border-primary hover:text-primary'}`;
+     btn.textContent = p;
+     btn.onclick = () => { activePage = p; render(); };
+     pageNums.appendChild(btn);
+ }
+ prev.disabled = activePage <= 1;
+ next.disabled = activePage >= total;
+ }
+})();
+</script>

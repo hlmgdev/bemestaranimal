@@ -1,0 +1,124 @@
+<!-- Hero Section: Premium Optimized -->
+<section class="bg-secondary text-white pt-[4rem] pb-[2.5rem] relative overflow-hidden" role="banner">
+ <div class="container mx-auto px-4 relative z-10 text-center md:text-left">
+ <div class="max-w-4xl">
+ <h1 class="font-title text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] font-black mb-6 tracking-tight leading-[1.1] text-balance">
+ Você me viu?
+ </h1>
+ 
+ <p class="text-[1.125rem] md:text-[1.25rem] lg:text-[1.375rem] font-medium leading-relaxed mb-6 text-balance text-white/90 max-w-2xl">
+ <span class="text-primary block mb-3 text-[1rem] lg:text-[1.125rem] font-black uppercase tracking-[0.2em]">Compromisso com o Reencontro</span>
+ Ajudamos animais desaparecidos a encontrarem o caminho de volta para suas famílias com segurança e transparência.
+ </p>
+
+ 
+ </div>
+ </div>
+</section>
+
+<section class="pt-10 pb-20 bg-white">
+ <div class="container mx-auto px-4">
+ <!-- Toolbar: Minimal & Clean -->
+ <div class="flex flex-wrap items-center justify-between gap-8 mb-10 border-b border-gray-100 pb-12">
+ <div>
+ <h2 class="text-3xl font-black text-secondary mb-2 tracking-tighter">Animais Desaparecidos</h2>
+ <p class="text-brand-text-main opacity-60 font-medium text-sm">Atualizado em tempo real pela nossa rede de proteção.</p>
+ </div>
+ <div class="bg-gray-50 px-8 py-4 rounded-3xl border border-gray-100 font-black text-secondary flex items-center justify-center text-sm tracking-wide">
+ <span id="lostPetCounter">0 animais encontrados</span>
+ </div>
+ </div>
+
+ <!-- Grid -->
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="lost-pet-grid"></div>
+
+ <!-- Pagination: No Shadows, Pure Interaction -->
+ <div class="flex items-center justify-center gap-4 mt-20">
+            <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-xl text-secondary hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed group" type="button" id="lostPrevBtn" aria-label="Ver página anterior">
+                <i class="fa-solid fa-chevron-left group-hover:-translate-x-1 transition-transform text-xs"></i>
+            </button>
+            <div class="flex gap-2" id="lostPetPageNumbers" aria-label="Números das páginas"></div>
+            <button class="w-10 h-10 flex items-center justify-center bg-white border border-gray-100 rounded-xl text-secondary hover:border-primary hover:text-primary transition-all disabled:opacity-30 disabled:cursor-not-allowed group" type="button" id="lostNextBtn" aria-label="Ver próxima página">
+                <i class="fa-solid fa-chevron-right group-hover:translate-x-1 transition-transform text-xs"></i>
+            </button>
+        </div>
+ </div>
+</section>
+
+<script>
+(function () {
+ let allPets = [], activePage = 1;
+ const pageSize = 6;
+ const grid = document.getElementById('lost-pet-grid');
+ const counter = document.getElementById('lostPetCounter');
+ const pageNumbers = document.getElementById('lostPetPageNumbers');
+ const prevBtn = document.getElementById('lostPrevBtn');
+ const nextBtn = document.getElementById('lostNextBtn');
+
+ const buildLocalPageNums = (wrap, active, total, onChange) => {
+        wrap.innerHTML = '';
+        for (let p = 1; p <= total; p++) {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = `w-10 h-10 flex items-center justify-center rounded-xl font-black text-xs transition-all ${p === active ? 'bg-primary text-white' : 'bg-white text-secondary border border-gray-100 hover:border-primary hover:text-primary'}`;
+            btn.textContent = p;
+            btn.addEventListener('click', () => onChange(p));
+            wrap.appendChild(btn);
+        }
+    };
+
+ fetch('data/voce-me-viu.json')
+ .then(r => r.json())
+ .then(data => { allPets = data; init(); })
+ .catch(e => console.error('Erro ao carregar voce-me-viu.json:', e));
+
+ function init() {
+ prevBtn.addEventListener('click', () => { if (activePage > 1) { activePage--; render(); } });
+ nextBtn.addEventListener('click', () => { if (activePage < getTotal()) { activePage++; render(); } });
+ render();
+ }
+
+ function getTotal() { return Math.max(1, Math.ceil(allPets.length / pageSize)); }
+ function trunc(t, n = 100) { return t.length > n ? t.slice(0, n) + '…' : t; }
+
+ function render() {
+ const total = getTotal();
+ activePage = Math.min(activePage, total);
+ grid.innerHTML = '';
+ allPets.slice((activePage - 1) * pageSize, activePage * pageSize).forEach(pet => {
+ const a = document.createElement('article');
+ a.className = 'group bg-white rounded-[2.5rem] border-2 border-gray-100 overflow-hidden flex flex-col h-full transition-all duration-500 hover:border-primary/20 hover:-translate-y-2';
+ a.innerHTML = `
+ <div class="h-72 overflow-hidden relative">
+ <img src="${pet.imagem}" alt="${pet.nome}" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+ <div class="absolute top-0 right-0 bg-[#F59E0B] text-white text-[0.6rem] font-black px-6 py-2 rounded-bl-[1.5rem] tracking-widest uppercase">Você me viu?</div>
+ </div>
+                <div class="p-8 flex flex-col flex-1">
+                    <h3 class="text-3xl font-black text-secondary mb-5 font-title leading-none tracking-tighter" style="text-wrap: balance;">${pet.nome}</h3>
+                    <div class="space-y-4 mb-8 uppercase">
+                        <div class="flex flex-col border-l-2 border-primary/30 pl-4 py-1">
+                            <span class="font-title font-bold text-gray-400 tracking-widest text-[0.55rem]">Sexo</span>
+                            <span class="text-secondary font-title font-black text-sm">${pet.sexo}</span>
+                        </div>
+                        <div class="flex flex-col border-l-2 border-primary/30 pl-4 py-1">
+                            <span class="font-title font-bold text-gray-400 tracking-widest text-[0.55rem]">Idade</span>
+                            <span class="text-secondary font-title font-black text-sm">${pet.idadeAproximada}</span>
+                        </div>
+                        <div class="flex flex-col border-l-2 border-primary/30 pl-4 py-1">
+                            <span class="font-title font-bold text-gray-400 tracking-widest text-[0.55rem]">Castrado</span>
+                            <span class="text-secondary font-title font-black text-sm">${pet.castrado}</span>
+                        </div>
+                        <p class="leading-relaxed text-xs text-gray-500 border-t border-gray-100 pt-6 font-medium">${trunc(pet.caracteristicas, 90)}</p>
+                    </div>
+                    <a class="mt-auto btn-secondary w-full" href="sou-tutor.html">Sou o responsável!</a>
+                </div>`;
+ grid.appendChild(a);
+ });
+ const n = allPets.length;
+ counter.innerHTML = `<span class="font-black ">${n}</span> ${n === 1 ? 'vida' : 'vidas'}`;
+ buildLocalPageNums(pageNumbers, activePage, total, p => { activePage = p; render(); });
+ prevBtn.disabled = activePage <= 1;
+ nextBtn.disabled = activePage >= total;
+ }
+})();
+</script>

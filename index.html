@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>COBEA Petrópolis - Portal de Bem-Estar Animal</title>
+ 
+ <!-- Fonts & Icons -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=Outfit:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+ 
+ <!-- Tailwind CSS -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ primary: '#F59E0B',
+ 'primary-hover': '#D97706',
+ secondary: '#1E3A8A',
+ 'secondary-hover': '#1E40AF',
+ danger: '#E11D48',
+ 'danger-hover': '#BE123C',
+ surface: '#F8FAFC',
+ 'brand-text': {
+ main: '#475569',
+ dark: '#1E293B'
+ }
+ },
+ fontFamily: {
+ sans: ['Open Sans', 'sans-serif'],
+ title: ['Outfit', 'sans-serif']
+ }
+ },
+ /* Container unificado: navbar + main usam o mesmo max-width */
+ container: {
+ center: true,
+ padding: '1rem',
+ screens: {
+ lg: '1100px',
+ xl: '1100px',
+ '2xl': '1200px', 
+ }
+ }
+ }
+ }
+ </script>
+
+ <style type="text/tailwindcss">
+ @layer base {
+ html {
+ font-size: 1rem; /* 16px */
+ }
+ body { 
+ @apply font-sans bg-surface text-brand-text-main antialiased min-h-screen flex flex-col;
+ padding-top: var(--navbar-height);
+ }
+ body lg {
+ padding-top: var(--navbar-height-lg);
+ }
+ #page-content { @apply flex-1; }
+ }
+ @layer components {
+ .nav-link {
+ @apply text-white/80 font-bold uppercase tracking-wider transition-all duration-200 hover:text-primary whitespace-nowrap relative;
+ /* font-size fluido: definido no elemento via clamp() para cada resolução */
+ }
+ .nav-link.active {
+ @apply text-primary;
+ }
+ .nav-link.active::after {
+ content: '';
+ @apply absolute -bottom-1.5 left-0 right-0 h-[0.1875rem] bg-primary rounded-full;
+ }
+ .skip-to-content {
+ @apply sr-only focus:sr-only focus:fixed focus:top-1 focus:left-1 focus:z-[9999] focus:bg-white focus:text-secondary focus:px-6 focus:py-3 focus:rounded-lg focus:shadow-xl focus:font-bold;
+ }
+
+ /* Navbar Container - uses CSS custom property for width */
+ .navbar-container {
+ max-width: var(--container-width);
+ }
+
+ /* Mobile Menu */
+ @media (max-width: 1023px) {
+ #navbar-nav-list {
+ @apply fixed left-0 right-0 flex-col gap-0 p-0 bg-secondary border-t-2 border-primary -translate-y-[110%] opacity-0 pointer-events-none transition-all duration-300 z-[1029] justify-start shadow-2xl;
+ top: var(--navbar-height);
+ }
+ #navbar-nav-list.is-open {
+ @apply translate-y-0 opacity-100 pointer-events-auto;
+ display: flex !important;
+ }
+ #navbar-nav-list li {
+ @apply w-full border-b border-white/10;
+ }
+ #navbar-nav-list .nav-link {
+ @apply block p-5 text-base;
+ }
+ #navbar-nav-list .nav-link.active::after {
+ @apply hidden;
+ }
+ }
+ }
+
+ @media (prefers-reduced-motion: reduce) {
+ *, ::before, ::after {
+ animation-duration: 0.01ms !important;
+ animation-iteration-count: 1 !important;
+ transition-duration: 0.01ms !important;
+ scroll-behavior: auto !important;
+ }
+ }
+ </style>
+ <!-- Fallback/Custom CSS -->
+ <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<a href="#page-content" class="skip-to-content">Pular para o conteúdo</a>
+<!-- =====================================================================
+ NAVBAR COBEA — Container Centralizado com Escala Segura
+ As 3 zonas estão dentro de um limite fixo para alinharem aos cards,
+ com tipografia usando breakpoints para NUNCA estourar.
+ ===================================================================== -->
+<header class="bg-secondary shadow-lg fixed w-full top-0 left-0 z-[1030]" role="banner" style="height: var(--navbar-height);">
+ 
+ <!-- ── Logo Left (Fora do container) ── -->
+ <div class="navbar-logo-left hidden lg:flex items-center justify-end">
+ <a href="#home" class="block w-fit ml-auto transition-transform duration-300 hover:scale-[1.04]" aria-label="Página inicial">
+  <img src="img/cobea_amarelo.png" alt="COBEA" style="max-height: clamp(1.75rem, 2.5vw, 2.625rem); height: auto; width: auto; max-width: 100%;" class="block">
+ </a>
+ </div>
+
+ <!-- Container com apenas menus (ZONA B) -->
+ <div class="navbar-container">
+ <nav class="hidden lg:flex items-center justify-between w-full h-full" aria-label="Navegação principal">
+ 
+ <!-- Primeiro item (esquerda) -->
+ <ul class="flex list-none items-center">
+ <li><a href="#me-viu" class="nav-link font-semibold whitespace-nowrap" 
+ style="font-size: clamp(0.6875rem, 1.5vw, 0.875rem);" data-page="me-viu">Animais Desaparecidos</a></li>
+ </ul>
+
+ <!-- Itens centrais do menu -->
+ <ul class="flex list-none items-center" style="gap: clamp(0.5rem, 2vw, 1.25rem);">
+ <li><a href="#me-adota" class="nav-link font-semibold whitespace-nowrap" 
+ style="font-size: clamp(0.6875rem, 1.5vw, 0.875rem);" data-page="me-adota">Adoção</a></li>
+ <li><a href="#campanhas" class="nav-link font-semibold whitespace-nowrap" 
+ style="font-size: clamp(0.6875rem, 1.5vw, 0.875rem);" data-page="campanhas">Campanhas</a></li>
+ <li><a href="#rede-protecao" class="nav-link font-semibold whitespace-nowrap" 
+ style="font-size: clamp(0.6875rem, 1.5vw, 0.875rem);" data-page="rede-protecao">Rede de Proteção</a></li>
+ <li><a href="#quero-ajudar" class="nav-link font-semibold whitespace-nowrap" 
+ style="font-size: clamp(0.6875rem, 1.5vw, 0.875rem);" data-page="quero-ajudar">Como Ajudar</a></li>
+ </ul>
+
+ <!-- Itens auxiliares (direita) -->
+ <ul class="flex list-none items-center font-bold text-white/50 uppercase tracking-widest" 
+ style="gap: clamp(0.5rem, 1.5vw, 1rem); font-size: clamp(0.59375rem, 1.2vw, 0.6875rem);">
+ <li><a href="#quem-somos" class="hover:text-primary transition-colors whitespace-nowrap">Quem Somos</a></li>
+ <li><a href="#faq" class="hover:text-primary transition-colors">FAQ</a></li>
+ <li><a href="#contato" class="hover:text-primary transition-colors">Contato</a></li>
+ </ul>
+ </nav>
+
+ <!-- MOBILE: Hamburger + logos (visível apenas em < lg) -->
+ <div class="lg:hidden flex items-center justify-between w-full">
+ <button type="button" class="navbar-hamburger text-white text-2xl focus:outline-none focus:ring-2 focus:ring-primary rounded p-1" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navbar-nav-list">
+ <i class="fa-solid fa-bars" aria-hidden="true"></i>
+ </button>
+ <div class="flex items-center gap-3">
+ <img src="img/cobea_amarelo.png" alt="COBEA" style="height: 2rem; width: auto;" class="object-contain">
+ <img src="img/logo_branca_.png" alt="PMP" style="height: 2rem; width: auto;" class="object-contain brightness-0 invert opacity-60">
+ </div>
+ <div class="w-9" aria-hidden="true"></div>
+ </div>
+ </div>
+
+ <!-- ── Logo Right (Fora do container) ── -->
+ <div class="navbar-logo-right hidden lg:flex items-center justify-start group">
+ <a href="https://www.petropolis.rj.gov.br" target="_blank" rel="noopener" class="block w-fit mr-auto" aria-label="Prefeitura">
+ <img src="img/logo_branca_.png" alt="Prefeitura Municipal"
+ style="max-height: clamp(2.75rem, 4vw, 4rem); height: auto; width: auto; max-width: 100%;" class="block brightness-0 invert opacity-60 group-hover:opacity-100 transition-opacity duration-300">
+ </a>
+ </div>
+
+</header>
+
+<main id="page-content"></main>
+
+ <footer class="bg-secondary text-white pt-24 pb-12 border-t-8 border-primary relative overflow-hidden">
+ <!-- Background Decoration -->
+ <i class="fa-solid fa-paw absolute -top-10 -left-10 text-[20rem] text-white/[0.02] pointer-events-none rotate-45"></i>
+ 
+ <div class="container mx-auto px-4 relative z-10">
+ <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+ <!-- Coluna 1: Missão & Redes -->
+ <div class="space-y-8 flex flex-col items-center md:items-start">
+ <p class="text-sm text-white/60 leading-relaxed text-center md:text-left font-medium ">
+ Transformamos o amor em lei e a proteção em ação oficial. A COBEA é a unidade de Petrópolis dedicada integralmente à dignidade e saúde de todos os animais.
+ </p>
+ <div class="flex gap-4">
+ <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-primary transition-all group" aria-label="Facebook COBEA">
+ <i class="fa-brands fa-facebook-f group-hover:scale-110"></i>
+ </a>
+ <a href="#" class="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center hover:bg-primary transition-all group" aria-label="Instagram COBEA">
+ <i class="fa-brands fa-instagram group-hover:scale-110"></i>
+ </a>
+ </div>
+ </div>
+
+ <!-- Coluna 2: Jornadas Principais -->
+ <div>
+ <h4 class="text-lg font-black mb-8 text-primary uppercase tracking-[0.2em] ">Jornadas</h4>
+ <ul class="space-y-4 text-[0.85rem] font-bold">
+ <li><a href="#denuncias" class="text-white/60 hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Denúncia de Maus-Tratos</a></li>
+ <li><a href="#me-viu" class="text-white/60 hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Animais Desaparecidos</a></li>
+ <li><a href="#me-adota" class="text-white/60 hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Vitrine de Adoção</a></li>
+ <li><a href="#rede-protecao" class="text-white/60 hover:text-white transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-primary"></i> Rede de Proteção</a></li>
+ </ul>
+ </div>
+
+ <!-- Coluna 3: Institucional -->
+ <div>
+ <h4 class="text-lg font-black mb-8 text-white uppercase tracking-[0.2em] ">Institucional</h4>
+ <ul class="space-y-4 text-[0.85rem] font-bold text-white/60">
+ <li><a href="#home" class="hover:text-white transition-colors">Quem Somos</a></li>
+ <li><a href="#campanhas" class="hover:text-white transition-colors">Campanhas Oficiais</a></li>
+ <li><a href="#faq" class="hover:text-white transition-colors">Perguntas Frequentes (FAQ)</a></li>
+ <li><a href="https://www.petropolis.rj.gov.br/portal/index.php/transparencia" target="_blank" class="hover:text-white transition-colors">Portal da Transparência</a></li>
+ </ul>
+ </div>
+
+ <!-- Coluna 4: Suporte e Localização -->
+ <div>
+ <h4 class="text-lg font-black mb-8 text-white uppercase tracking-[0.2em] ">Atendimento</h4>
+ <ul class="space-y-5 text-sm">
+ <li class="flex items-start gap-4">
+ <div class="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
+ <i class="fa-solid fa-phone text-primary text-xs"></i>
+ </div>
+ <div class="flex flex-col">
+ <span class="text-xs text-white/40 uppercase font-black mb-0.5">Telefone</span>
+ <span class="font-bold">(24) 2291-1505</span>
+ </div>
+ </li>
+ <li class="flex items-start gap-4">
+ <div class="w-8 h-8 bg-white/5 rounded-lg flex items-center justify-center shrink-0">
+ <i class="fa-solid fa-location-dot text-primary text-xs"></i>
+ </div>
+ <div class="flex flex-col">
+ <span class="text-xs text-white/40 uppercase font-black mb-0.5">Endereço</span>
+ <span class="font-medium text-white/70">Rua Teresa, 1515 - Sala 164<br>Hiper Shopping, Petrópolis - RJ</span>
+ </div>
+ </li>
+ </ul>
+ </div>
+ </div>
+
+ <!-- Footer Bottom -->
+ <div class="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[0.65rem] text-white/30 uppercase font-black tracking-[0.15em]">
+ <div class="text-center md:text-left">
+ &copy; 2026 COBEA • Prefeitura Municipal de Petrópolis. Direitos Reservados.
+ </div>
+ <div class="flex gap-8">
+ <a href="#" class="hover:text-white transition-colors">Acessibilidade</a>
+ <a href="#" class="hover:text-white transition-colors">Privacidade</a>
+ <a href="#" class="hover:text-white transition-colors">Desenvolvido com <i class="fa-solid fa-heart text-danger"></i> pela Causa Animal</a>
+ </div>
+ </div>
+ </div>
+ </footer>
+
+<script src="js/layout.js"></script>
+</body>
+</html>
+

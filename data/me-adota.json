@@ -1,0 +1,47 @@
+[
+  {
+    "nome": "Téo",
+    "categoria": "cao",
+    "imagem": "img/me-adota/cachorro01.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "3 meses",
+    "castrado": "Não",
+    "caracteristicas": "Filhote curioso, brincalhão e muito carinhoso. Ideal para quem quer acompanhar o crescimento de um companheiro de vida."
+  },
+  {
+    "nome": "Nina",
+    "categoria": "cao",
+    "imagem": "img/me-adota/cachorro2.jpg",
+    "sexo": "Fêmea",
+    "idadeAproximada": "5 meses",
+    "castrado": "Sim",
+    "caracteristicas": "Companheira de olhar doce, adora colo e se adapta bem a ambientes tranquilos com rotina de cuidados e afeto."
+  },
+  {
+    "nome": "Luna",
+    "categoria": "gato",
+    "imagem": "img/me-adota/gato01.jpg",
+    "sexo": "Fêmea",
+    "idadeAproximada": "1 ano",
+    "castrado": "Sim",
+    "caracteristicas": "Gata observadora e elegante, busca um lar seguro com espaço para descanso, carinho e muitos arranhadores."
+  },
+  {
+    "nome": "Mingau",
+    "categoria": "gato",
+    "imagem": "img/me-adota/gato02.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "2 anos",
+    "castrado": "Sim",
+    "caracteristicas": "Gato sereno e muito companheiro, perfeito para quem procura um amigo calmo e afetuoso para a rotina de casa."
+  },
+  {
+    "nome": "Bento",
+    "categoria": "gato",
+    "imagem": "img/me-adota/gato03.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "4 meses",
+    "castrado": "Não",
+    "caracteristicas": "Filhote brincalhão, esperto e com muita energia. Vai adorar companhia, brinquedos e uma família paciente para ensinar com carinho."
+  }
+]

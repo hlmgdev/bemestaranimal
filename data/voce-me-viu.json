@@ -1,0 +1,74 @@
+[
+  {
+    "nome": "Caramelo",
+    "imagem": "img/voce-me-viu/caramelo.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "5 anos",
+    "castrado": "Sim",
+    "caracteristicas": "Existe algo que representa mais o Brasil do que um cachorro caramelo?"
+  },
+  {
+    "nome": "Filhote",
+    "imagem": "img/voce-me-viu/filhhote.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "2 meses",
+    "castrado": "Não",
+    "caracteristicas": "Animal jovem encontrado sem tutor identificado."
+  },
+  {
+    "nome": "Gato",
+    "imagem": "img/voce-me-viu/gato02.jpg",
+    "sexo": "Fêmea",
+    "idadeAproximada": "1 ano",
+    "castrado": "Sim",
+    "caracteristicas": "Gata de pelagem marcante aguardando reencontro com o tutor."
+  },
+  {
+    "nome": "Cachorro preto",
+    "imagem": "img/voce-me-viu/raca-de-cachorro-preto.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "3 anos",
+    "castrado": "Sim",
+    "caracteristicas": "Animal de porte médio, preto, em busca do tutor."
+  },
+  {
+    "nome": "Jabuti",
+    "imagem": "img/voce-me-viu/jabuti.jpg",
+    "sexo": "Não informado",
+    "idadeAproximada": "Não informada",
+    "castrado": "Não se aplica",
+    "caracteristicas": "Jabuti encontrado sem identificação do tutor."
+  },
+  {
+    "nome": "Jaspion",
+    "imagem": "img/voce-me-viu/jaspion.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "4 anos",
+    "castrado": "Sim",
+    "caracteristicas": "Cão de porte médio, pelagem curta e olhar atento. Muito dócil com crianças, foi encontrado próximo ao centro sem coleira."
+  },
+  {
+    "nome": "Lex",
+    "imagem": "img/voce-me-viu/lex.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "2 anos",
+    "castrado": "Não",
+    "caracteristicas": "Cão jovem e agitado, encontrado no bairro Cascatinha. Parece bem cuidado e responde bem ao chamado."
+  },
+  {
+    "nome": "Pingo",
+    "imagem": "img/voce-me-viu/pingo.jpg",
+    "sexo": "Macho",
+    "idadeAproximada": "6 meses",
+    "castrado": "Não",
+    "caracteristicas": "Filhote de pequeno porte encontrado sozinho na Quitandinha. Manso e acostumado com pessoas, provavelmente tem tutor."
+  },
+  {
+    "nome": "Shitara",
+    "imagem": "img/voce-me-viu/gata-shitara.jpg",
+    "sexo": "Fêmea",
+    "idadeAproximada": "3 anos",
+    "castrado": "Sim",
+    "caracteristicas": "Gata de pelagem rajada, comportamento tímido mas afetuoso. Encontrada no bairro Mosela, aparenta ser de estimação."
+  }
+]

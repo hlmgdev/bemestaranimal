@@ -1,0 +1,329 @@
+<!-- Hero Section: Premium Optimized -->
+<section class="bg-secondary text-white pt-[4rem] pb-[2.5rem] relative overflow-hidden" role="banner">
+ <div class="container mx-auto px-4 relative z-10 text-center md:text-left">
+ <div class="max-w-4xl">
+ <!-- Título: Outfit + Italic (Brand DNA) -->
+ <h1 class="font-title text-[2.5rem] md:text-[3.25rem] lg:text-[4rem] font-black mb-6 tracking-tight leading-[1.1] text-balance">
+ Faça parte da rede
+ </h1>
+ 
+ <p class="text-[1.125rem] md:text-[1.25rem] lg:text-[1.375rem] font-medium leading-relaxed mb-6 text-balance text-white/90 max-w-2xl">
+ Protetores e ONGs cadastrados na COBEA ganham <strong class="text-white ">visibilidade, apoio e respaldo institucional</strong> pela causa animal em Petrópolis.
+ </p>
+
+ <div class="flex flex-wrap gap-4 justify-center md:justify-start">
+ <a href="#cadastro-protetores" class="btn-outline-white" aria-label="Cadastrar agora">
+ <i class="fa-solid fa-user-plus mr-3"></i>
+ <span>Cadastrar agora — Gratuito</span>
+ </a>
+ <a href="tel:552422911505" class="btn-outline-white">
+ <i class="fa-solid fa-phone mr-3"></i>
+ <span>(24) 2291-1505</span>
+ </a>
+ </div>
+ </div>
+ </div>
+</section>
+
+
+<section class="py-12">
+ <div class="container mx-auto px-4">
+ <div class="max-w-3xl mx-auto space-y-8">
+
+ <!-- Info Card: Como funciona (topo, 1 coluna) -->
+ <article class="bg-white rounded-2xl border border-gray-200 p-8">
+ <div class="flex items-center gap-4 mb-5 pb-5 border-b border-gray-100">
+ <div class="w-11 h-11 bg-secondary/10 text-secondary flex items-center justify-center rounded-xl shrink-0">
+ <i class="fa-solid fa-circle-info text-lg"></i>
+ </div>
+ <div>
+ <span class="block font-black text-secondary text-sm uppercase tracking-widest leading-none mb-0.5">Cadastro guiado</span>
+ <span class="block text-xs text-brand-text-main opacity-60 font-medium">Como funciona</span>
+ </div>
+ </div>
+
+ <p class="text-sm text-brand-text-main leading-relaxed mb-4 opacity-80">
+ Este formulário organiza o cadastro em três partes: identificação, endereço e observações. A primeira escolha define se você está cadastrando um protetor individual ou uma ONG.
+ </p>
+
+ <ul class="space-y-2 mb-5">
+ <li class="flex items-start gap-2 text-sm text-brand-text-main opacity-80">
+ <i class="fa-solid fa-circle-check text-green-500 mt-0.5 shrink-0 text-xs"></i>
+ Os campos de identificação mudam conforme a opção PF ou PJ.
+ </li>
+ <li class="flex items-start gap-2 text-sm text-brand-text-main opacity-80">
+ <i class="fa-solid fa-circle-check text-green-500 mt-0.5 shrink-0 text-xs"></i>
+ O endereço ajuda na validação da rede de proteção.
+ </li>
+ <li class="flex items-start gap-2 text-sm text-brand-text-main opacity-80">
+ <i class="fa-solid fa-circle-check text-green-500 mt-0.5 shrink-0 text-xs"></i>
+ As observações ajudam a equipe a entender a atuação do cadastro.
+ </li>
+ </ul>
+
+ <div class="bg-amber-50 border border-amber-100 rounded-xl p-4 text-xs text-amber-900 leading-relaxed">
+ <strong>Dica:</strong> mantenha CEP, bairro, telefone e referência atualizados para facilitar o contato da equipe.
+ </div>
+ </article>
+
+ <!-- Form Card -->
+ <article class="bg-white rounded-2xl border border-gray-200 overflow-hidden" id="cadastro-protetores">
+ <!-- Header neutro -->
+ <div class="px-8 py-6 border-b border-gray-100">
+ <h2 class="text-xl font-black text-secondary mb-1">Formulário de cadastro</h2>
+ <p class="text-sm text-brand-text-main opacity-60">Preencha os dados com atenção para que o cadastro possa ser analisado e organizado corretamente.</p>
+ </div>
+
+ <form class="p-8 space-y-10" action="#" method="post">
+
+ <!-- Fieldset 01: Perfil -->
+ <fieldset class="space-y-5">
+ <legend class="text-xs font-black uppercase tracking-widest text-secondary pb-3 border-b border-gray-100 block w-full">Tipo de cadastro e identificação</legend>
+
+ <!-- Role Selection -->
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+ <label class="relative cursor-pointer">
+ <input type="radio" name="tipoCadastro" value="pf" class="sr-only peer" checked>
+ <div class="p-5 rounded-xl border-2 border-gray-200 bg-gray-50/50 transition-all peer-checked:border-secondary peer-checked:bg-blue-50/50 hover:border-gray-300 flex items-center gap-4">
+ <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-lg text-gray-400 shadow-sm shrink-0">
+ <i class="fa-solid fa-person"></i>
+ </div>
+ <div>
+ <strong class="block text-sm font-bold text-secondary">Protetor Individual</strong>
+ <span class="text-xs text-brand-text-main opacity-60">Pessoa Física</span>
+ </div>
+ </div>
+ </label>
+
+ <label class="relative cursor-pointer">
+ <input type="radio" name="tipoCadastro" value="pj" class="sr-only peer">
+ <div class="p-5 rounded-xl border-2 border-gray-200 bg-gray-50/50 transition-all peer-checked:border-secondary peer-checked:bg-blue-50/50 hover:border-gray-300 flex items-center gap-4">
+ <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-lg text-gray-400 shadow-sm shrink-0">
+ <i class="fa-solid fa-people-group"></i>
+ </div>
+ <div>
+ <strong class="block text-sm font-bold text-secondary">ONG / Associação</strong>
+ <span class="text-xs text-brand-text-main opacity-60">Pessoa Jurídica</span>
+ </div>
+ </div>
+ </label>
+ </div>
+
+ <!-- PF Fields -->
+ <div id="cadastroPfFields" class="animate-in fade-in duration-300">
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="cpf">CPF</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="text" id="cpf" name="cpf" placeholder="Digite o CPF">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="dataNascimento">Data de Nascimento</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="date" id="dataNascimento" name="dataNascimento">
+ </div>
+ <div class="md:col-span-2">
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="nome">Nome Completo</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="text" id="nome" name="nome" placeholder="Digite o nome">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="rg">RG</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="text" id="rg" name="rg" placeholder="Digite o RG">
+ </div>
+ </div>
+ </div>
+
+ <!-- PJ Fields -->
+ <div id="cadastroPjFields" class="hidden animate-in fade-in duration-300">
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+ <div class="md:col-span-2">
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="razaoSocial">Razão Social</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="text" id="razaoSocial" name="razaoSocial">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="cnpj">CNPJ</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="text" id="cnpj" name="cnpj">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="nomeResponsavel">Nome do Responsável</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all" type="text" id="nomeResponsavel" name="nomeResponsavel">
+ </div>
+ </div>
+ </div>
+ </fieldset>
+
+ <hr class="border-gray-100">
+
+ <!-- Fieldset 02: Endereço e Contato -->
+ <fieldset class="space-y-4">
+ <legend class="text-xs font-black uppercase tracking-widest text-secondary pb-3 border-b border-gray-100 block w-full">Endereço e contato</legend>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="cep">CEP</label>
+ <div class="flex gap-2">
+ <input class="flex-1 px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="text" id="cep" name="cep" placeholder="Digite o CEP">
+ <button type="button" class="px-4 bg-gray-100 hover:bg-secondary hover:text-white text-secondary rounded-lg transition-colors text-sm font-bold">
+ <i class="fa-solid fa-magnifying-glass"></i> BUSCA CEP
+ </button>
+ </div>
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="bairro">Bairro</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="text" id="bairro" name="bairro" placeholder="Digite o bairro">
+ </div>
+ <div class="md:col-span-2">
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="endereco">Endereço</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="text" id="endereco" name="endereco" placeholder="Digite o endereço">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="numero">Número</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="text" id="numero" name="numero" placeholder="Digite o número">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="complemento">Complemento</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="text" id="complemento" name="complemento" placeholder="Digite o complemento">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="telefone">Telefone</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="tel" id="telefone" name="telefone" placeholder="Telefone">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="referencia">Referência</label>
+ <input class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all" type="text" id="referencia" name="referencia" placeholder="Digite a referência">
+ </div>
+ </div>
+ </fieldset>
+
+ <hr class="border-gray-100">
+
+ <!-- Fieldset 03: Informações complementares -->
+ <fieldset class="space-y-4">
+ <legend class="text-xs font-black uppercase tracking-widest text-secondary pb-3 border-b border-gray-100 block w-full">Informações complementares</legend>
+
+ <div>
+ <label class="block text-xs font-bold text-secondary mb-1.5 uppercase tracking-wider" for="observacoes">Observações</label>
+ <textarea class="w-full px-3 py-2.5 rounded-lg border border-gray-200 bg-gray-50 text-sm focus:ring-2 focus:ring-secondary/20 outline-none transition-all resize-none" id="observacoes" name="observacoes" rows="4" placeholder="Quantos animais atende, principais necessidades, área de atuação..."></textarea>
+ </div>
+ </fieldset>
+
+ <hr class="border-gray-100">
+
+ <!-- Fieldset 04: Divulgação -->
+ <fieldset class="space-y-4">
+ <legend class="text-xs font-black uppercase tracking-widest text-secondary pb-3 border-b border-gray-100 block w-full">Divulgação autorizada</legend>
+
+ <p class="text-xs text-brand-text-main opacity-60 leading-relaxed">Se a divulgação do nome for <span class="font-bold">autorizada</span>, os demais dados também permanecem ocultos por padrão.</p>
+
+ <div class="space-y-3">
+ <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex items-center justify-between gap-4">
+ <div>
+ <strong class="block text-sm font-bold text-secondary mb-0.5">Autoriza divulgar o nome?</strong>
+ <p class="text-xs text-brand-text-main opacity-60">Sem essa autorização, telefone, e-mail e bairro ficam bloqueados.</p>
+ </div>
+ <label class="relative inline-flex items-center cursor-pointer shrink-0">
+ <input type="checkbox" id="autorizarNome" class="sr-only peer">
+ <div class="w-12 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[3px] after:start-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[18px] after:w-[18px] after:transition-all peer-checked:bg-secondary"></div>
+ </label>
+ </div>
+
+ <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex items-center justify-between gap-4 opacity-50 transition-opacity" id="sharing-sub-1">
+ <div>
+ <strong class="block text-sm font-bold text-secondary mb-0.5">Autoriza divulgar o telefone?</strong>
+ <p class="text-xs text-brand-text-main opacity-60">Disponível apenas quando o nome estiver autorizado.</p>
+ </div>
+ <label class="relative inline-flex items-center cursor-pointer shrink-0">
+ <input type="checkbox" id="autorizarTelefone" class="sr-only peer shadow-inner" disabled>
+ <div class="w-12 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[3px] after:start-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[18px] after:w-[18px] after:transition-all peer-checked:bg-secondary"></div>
+ </label>
+ </div>
+
+ <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex items-center justify-between gap-4 opacity-50 transition-opacity" id="sharing-sub-2">
+ <div>
+ <strong class="block text-sm font-bold text-secondary mb-0.5">Autoriza divulgar o e-mail?</strong>
+ <p class="text-xs text-brand-text-main opacity-60">Disponível apenas quando o nome estiver autorizado.</p>
+ </div>
+ <label class="relative inline-flex items-center cursor-pointer shrink-0">
+ <input type="checkbox" id="autorizarEmail" class="sr-only peer shadow-inner" disabled>
+ <div class="w-12 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[3px] after:start-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[18px] after:w-[18px] after:transition-all peer-checked:bg-secondary"></div>
+ </label>
+ </div>
+
+ <div class="bg-gray-50 border border-gray-200 rounded-xl p-4 flex items-center justify-between gap-4 opacity-50 transition-opacity" id="sharing-sub-3">
+ <div>
+ <strong class="block text-sm font-bold text-secondary mb-0.5">Autoriza divulgar o bairro?</strong>
+ <p class="text-xs text-brand-text-main opacity-60">Disponível apenas quando o nome estiver autorizado.</p>
+ </div>
+ <label class="relative inline-flex items-center cursor-pointer shrink-0">
+ <input type="checkbox" id="autorizarBairro" class="sr-only peer shadow-inner" disabled>
+ <div class="w-12 h-6 bg-gray-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[3px] after:start-[3px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-[18px] after:w-[18px] after:transition-all peer-checked:bg-secondary"></div>
+ </label>
+ </div>
+ </div>
+ </fieldset>
+
+ <!-- Disclaimer -->
+ <div class="text-xs text-brand-text-main opacity-70 leading-relaxed space-y-1 pt-2 border-t border-gray-100">
+ <p><strong class="text-secondary">IMPORTANTE:</strong> o cadastro será analisado pela COBEA antes de integrar a rede de proteção.</p>
+ <p>Confira os dados antes de salvar para evitar divergências no contato e na validação documental.</p>
+ </div>
+
+ <!-- Submit -->
+ <div class="flex justify-end pt-2">
+ <button type="submit" class="px-10 py-3.5 bg-secondary hover:bg-secondary/90 text-white rounded-xl font-black uppercase text-sm tracking-widest transition-all transform active:scale-95">
+ Salvar cadastro
+ </button>
+ </div>
+
+ </form>
+ </article>
+
+ </div>
+ </div>
+</section>
+
+<script>
+(function () {
+ var typeRadios = document.querySelectorAll('input[name="tipoCadastro"]');
+ var pfFields = document.getElementById('cadastroPfFields');
+ var pjFields = document.getElementById('cadastroPjFields');
+ var autorizarNome = document.getElementById('autorizarNome');
+ var subs = [
+ document.getElementById('sharing-sub-1'),
+ document.getElementById('sharing-sub-2'),
+ document.getElementById('sharing-sub-3')
+ ];
+ var subInputs = [
+ document.getElementById('autorizarTelefone'),
+ document.getElementById('autorizarEmail'),
+ document.getElementById('autorizarBairro')
+ ];
+
+ function setFieldState(container, disabled) {
+ container.querySelectorAll('input, select, textarea, button').forEach(function (f) {
+ f.disabled = disabled;
+ });
+ }
+
+ function updateCadastroType() {
+ var isPf = document.querySelector('input[name="tipoCadastro"]:checked').value === 'pf';
+ pfFields.classList.toggle('hidden', !isPf);
+ pjFields.classList.toggle('hidden', isPf);
+ setFieldState(pfFields, !isPf);
+ setFieldState(pjFields, isPf);
+ }
+
+ function updateSharingCascade() {
+ var authorized = autorizarNome.checked;
+ subs.forEach(function (el) { el.classList.toggle('opacity-50', !authorized); });
+ subInputs.forEach(function (inp) {
+ inp.disabled = !authorized;
+ if (!authorized) inp.checked = false;
+ });
+ }
+
+ typeRadios.forEach(function (r) { r.addEventListener('change', updateCadastroType); });
+ autorizarNome.addEventListener('change', updateSharingCascade);
+
+ updateCadastroType();
+ updateSharingCascade();
+})();
+</script>
