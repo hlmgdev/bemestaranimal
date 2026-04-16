@@ -16,7 +16,7 @@
   "depoimentos": [
     {
       "id": 1,
-      "imagem": "/img/home/max_adocao.jpg",
+      "imagem": "img/home/max_adocao.jpg",
       "alt": "Cão adotado feliz",
       "citacao": "O Max agora é o coração da nossa casa. O processo pela COBEA foi transparente e essencial para nos sentirmos seguros na adoção.",
       "autor": "Família Oliveira",
@@ -25,7 +25,7 @@
     },
     {
       "id": 2,
-      "imagem": "/img/home/luna_reencontro.png",
+      "imagem": "img/home/luna_reencontro.png",
       "alt": "Gato reencontrado",
       "citacao": "A Luna desapareceu por 3 dias. Graças ao portal 'Você Me Viu', um protetor a localizou em poucas horas. Gratidão eterna!",
       "autor": "Beatriz Santos",
@@ -34,7 +34,7 @@
     },
     {
       "id": 3,
-      "imagem": "/img/home/ong_parceira.jpg",
+      "imagem": "img/home/ong_parceira.jpg",
       "alt": "Veterinária parceira",
       "citacao": "Como ONG parceira, a COBEA nos deu a visibilidade que precisávamos para triplicar nossas adoções e castrações no último ano.",
       "autor": "ONG Patas Amigas",
