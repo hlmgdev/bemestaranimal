@@ -12,10 +12,10 @@
  'cadastro-protetores': { title: PREFIX + 'Cadastro de Protetores' },
  'sou-tutor': { title: PREFIX + 'Sou o Responsável', nav: 'me-viu' },
  'quero-adotar': { title: PREFIX + 'Quero Adotar', nav: 'me-adota' },
- 'campanhas': { title: PREFIX + 'Campanhas' },
- 'faq': { title: PREFIX + 'Perguntas Frequentes' },
- 'contato': { title: PREFIX + 'Contato' },
- 'quem-somos': { title: PREFIX + 'Quem Somos' }
+ 'campanhas': { title: PREFIX + 'Campanhas', nav: 'campanhas' },
+ 'faq': { title: PREFIX + 'Perguntas Frequentes', nav: 'faq' },
+ 'contato': { title: PREFIX + 'Contato', nav: 'contato' },
+ 'quem-somos': { title: PREFIX + 'Quem Somos', nav: 'quem-somos' }
  };
 
  const container = document.getElementById('page-content');
