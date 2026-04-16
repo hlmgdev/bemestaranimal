@@ -141,6 +141,8 @@
  
  <!-- Primeiro item (esquerda) -->
  <ul class="flex list-none items-center">
+ <li><a href="#home" class="nav-link font-semibold whitespace-nowrap" 
+ style="font-size: clamp(0.6875rem, 1.5vw, 0.875rem);" data-page="home">Home</a></li>
  <li><a href="#me-viu" class="nav-link font-semibold whitespace-nowrap" 
  style="font-size: clamp(0.6875rem, 1.5vw, 0.875rem);" data-page="me-viu">Animais Desaparecidos</a></li>
  </ul>
@@ -188,6 +190,19 @@
  </div>
 
 </header>
+
+<!-- MOBILE: Menu de navegação dropdown -->
+<ul id="navbar-nav-list" class="lg:hidden fixed top-0 left-0 right-0 bg-secondary shadow-lg list-none p-4 space-y-2 z-[900]" style="top: var(--navbar-height);">
+ <li><a href="#home" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap" data-page="home">Home</a></li>
+ <li><a href="#me-viu" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap" data-page="me-viu">Animais Desaparecidos</a></li>
+ <li><a href="#me-adota" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap" data-page="me-adota">Adoção</a></li>
+ <li><a href="#campanhas" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap" data-page="campanhas">Campanhas</a></li>
+ <li><a href="#rede-protecao" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap" data-page="rede-protecao">Rede de Proteção</a></li>
+ <li><a href="#quero-ajudar" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap" data-page="quero-ajudar">Como Ajudar</a></li>
+ <li><a href="#quem-somos" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap text-white/50 uppercase tracking-widest text-sm">Quem Somos</a></li>
+ <li><a href="#faq" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap text-white/50 uppercase tracking-widest text-sm">FAQ</a></li>
+ <li><a href="#contato" class="nav-link block px-4 py-3 rounded hover:bg-secondary-hover font-semibold whitespace-nowrap text-white/50 uppercase tracking-widest text-sm">Contato</a></li>
+</ul>
 
 <main id="page-content"></main>
 
