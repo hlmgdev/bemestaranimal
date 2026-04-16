@@ -1,0 +1,33 @@
+# Antigravity & Agent
+.agent/
+.ag/
+.agignore
+.claude
+.claudeignore
+
+# IDE & Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment & Secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+*.log
+
+# OS Files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Common directories (Web)
+node_modules/
+dist/
+build/
+out/
+.next/
+.cache/

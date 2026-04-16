@@ -132,31 +132,7 @@
         </div>
 
         <!-- Estatísticas de Impacto (Contadores Flat) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 max-w-6xl mx-auto">
-            <div
-                class="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 text-center group hover:bg-primary transition-all duration-500">
-                <div class="text-5xl font-black text-secondary mb-2 group-hover:text-white transition-colors ">1.200+
-                </div>
-                <div
-                    class="text-sm font-bold uppercase tracking-widest text-primary group-hover:text-white/80 opacity-80 ">
-                    Animais Adotados</div>
-            </div>
-            <div
-                class="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 text-center group hover:bg-primary transition-all duration-500">
-                <div class="text-5xl font-black text-secondary mb-2 group-hover:text-white transition-colors ">450+
-                </div>
-                <div
-                    class="text-sm font-bold uppercase tracking-widest text-primary group-hover:text-white/80 opacity-80 ">
-                    Reencontros Realizados</div>
-            </div>
-            <div
-                class="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 text-center group hover:bg-primary transition-all duration-500">
-                <div class="text-5xl font-black text-secondary mb-2 group-hover:text-white transition-colors ">25+</div>
-                <div
-                    class="text-sm font-bold uppercase tracking-widest text-primary group-hover:text-white/80 opacity-80 ">
-                    ONGs e Protetores Parceiros</div>
-            </div>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-24 max-w-6xl mx-auto" id="impacto-grid"></div>
 
         <div class="text-center mb-16">
             <p class="text-brand-text-main opacity-60 font-medium ">Vidas que ganharam um novo capítulo através da nossa
@@ -165,65 +141,44 @@
         </div>
 
         <!-- Cards de Depoimento (Clean/Premium) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
-            <!-- Depoimento 1 -->
-            <div
-                class="bg-white rounded-[3rem] border border-gray-100 p-8 flex flex-col items-center text-center group">
-                <div class="w-full aspect-square rounded-[2rem] overflow-hidden mb-8">
-                    <img src="/img/home/max_adocao.jpg"
-                        alt="Cão adotado feliz"
-                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100">
-                </div>
-                <blockquote class=" text-brand-text-main font-medium leading-relaxed mb-6">
-                    "O Max agora é o coração da nossa casa. O processo pela COBEA foi transparente e essencial para nos
-                    sentirmos seguros na adoção."
-                </blockquote>
-                <cite class="">
-                    <span class="block font-black text-secondary uppercase text-xs tracking-widest">Família
-                        Oliveira</span>
-                    <span class="text-[10px] text-primary font-bold uppercase tracking-tighter">Adotantes do Max</span>
-                </cite>
-            </div>
-
-            <!-- Depoimento 2 -->
-            <div
-                class="bg-white rounded-[3rem] border border-gray-100 p-8 flex flex-col items-center text-center group">
-                <div class="w-full aspect-square rounded-[2rem] overflow-hidden mb-8">
-                    <img src="/img/home/luna_reencontro.png"
-                        alt="Gato reencontrado"
-                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100">
-                </div>
-                <blockquote class=" text-brand-text-main font-medium leading-relaxed mb-6">
-                    "A Luna desapareceu por 3 dias. Graças ao portal 'Você Me Viu', um protetor a localizou em poucas
-                    horas. Gratidão eterna!"
-                </blockquote>
-                <cite class="">
-                    <span class="block font-black text-secondary uppercase text-xs tracking-widest">Beatriz
-                        Santos</span>
-                    <span class="text-[10px] text-secondary font-bold uppercase tracking-tighter">Tutor da Luna</span>
-                </cite>
-            </div>
-
-            <!-- Depoimento 3 -->
-            <div
-                class="bg-white rounded-[3rem] border border-gray-100 p-8 flex flex-col items-center text-center group">
-                <div class="w-full aspect-square rounded-[2rem] overflow-hidden mb-8">
-                    <img src="/img/home/ong_parceira.jpg"
-                        alt="Veterinária parceira"
-                        class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100">
-                </div>
-                <blockquote class=" text-brand-text-main font-medium leading-relaxed mb-6">
-                    "Como ONG parceira, a COBEA nos deu a visibilidade que precisávamos para triplicar nossas adoções e
-                    castrações no último ano."
-                </blockquote>
-                <cite class="">
-                    <span class="block font-black text-secondary uppercase text-xs tracking-widest">ONG Patas
-                        Amigas</span>
-                    <span class="text-[10px] text-danger font-bold uppercase tracking-tighter">Parceiro Oficial</span>
-                </cite>
-            </div>
-        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-7xl mx-auto" id="depoimentos-grid"></div>
     </div>
+
+    <script>
+        (function () {
+            const impactoGrid = document.getElementById('impacto-grid');
+            const depoimentosGrid = document.getElementById('depoimentos-grid');
+
+            fetch('data/prova-social.json')
+                .then(r => r.json())
+                .then(data => {
+                    // Renderizar Estatísticas
+                    impactoGrid.innerHTML = data.impacto.map(item => `
+                        <div class="bg-gray-50 p-10 rounded-[2.5rem] border border-gray-100 text-center group hover:bg-primary transition-all duration-500">
+                            <div class="text-5xl font-black text-secondary mb-2 group-hover:text-white transition-colors">${item.numero}</div>
+                            <div class="text-sm font-bold uppercase tracking-widest text-primary group-hover:text-white/80 opacity-80">${item.titulo}</div>
+                        </div>
+                    `).join('');
+
+                    // Renderizar Depoimentos
+                    depoimentosGrid.innerHTML = data.depoimentos.map(dep => `
+                        <div class="bg-white rounded-[3rem] border border-gray-100 p-8 flex flex-col items-center text-center group">
+                            <div class="w-full aspect-square rounded-[2rem] overflow-hidden mb-8">
+                                <img src="${dep.imagem}" alt="${dep.alt}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-110 group-hover:scale-100">
+                            </div>
+                            <blockquote class="text-brand-text-main font-medium leading-relaxed mb-6">
+                                "${dep.citacao}"
+                            </blockquote>
+                            <cite class="">
+                                <span class="block font-black text-secondary uppercase text-xs tracking-widest">${dep.autor}</span>
+                                <span class="text-[10px] text-${dep.tipo} font-bold uppercase tracking-tighter">${dep.cargo}</span>
+                            </cite>
+                        </div>
+                    `).join('');
+                })
+                .catch(e => console.error('Erro ao carregar prova-social.json:', e));
+        })();
+    </script>
 </section>
 
 <!-- Nossa Identidade: Quem Somos & Missão -->
